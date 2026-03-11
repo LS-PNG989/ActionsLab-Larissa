@@ -1,0 +1,44 @@
+name: Build and Test Pipeline - Larissa
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Start build message
+        run: echo "Starting build process..."
+      
+      - name: Simulate compilation
+        run: sleep 3
+      
+      - name: Build complete message
+        run: echo "Build completed successfully"
+      
+      - name: Builder credit
+        run: echo "Built by Larissa"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Start test message
+        run: echo "Running automated tests..."
+      
+      - name: Simulate test execution
+        run: sleep 2
+      
+      - name: Show date and time
+        run: date
+      
+      - name: Test complete message
+        run: echo "All tests passed for Larissa"
